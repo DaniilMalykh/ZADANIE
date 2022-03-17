@@ -27,11 +27,13 @@ fun main() {
             }
         }
     }
+   
     File("./out/production/roles/outText.txt").bufferedWriter().use { buffWriter ->
         for (role in dictionary.keys) {
             buffWriter.write("${role}:\n")
+            
             val roleWordss = dictionary[role]
-            roleWordss?.let { roleWordss ->
+             roleWordss?.let { roleWordss ->
                 for (phraseKey in roleWordss.keys) {
                     buffWriter.write("${phraseKey} ${roleWordss[phraseKey]}\n")
                 }
